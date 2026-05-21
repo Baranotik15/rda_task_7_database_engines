@@ -24,15 +24,14 @@ CREATE TABLE ProductDescription (
     ProductID INT,
     Description TEXT,
     PRIMARY KEY (ID),
-    FOREIGN KEY (ProductID) REFERENCES Products(ID),
     FOREIGN KEY (CountryID) REFERENCES Countries(ID)
-) ENGINE=MyISAM;
+) ENGINE=InnoDB;
 
 -- Create a table for storing logs. For now we don't need to save them, but we need to implement functionality (Columns: ID, Time, LogRecord)
 CREATE TABLE Logs (
     ID INT,
-    Time DATETIME,
-    LogRecord TEXT,
+    Timestamp DATETIME,
+    Message TEXT,
     PRIMARY KEY (ID)
 ) ENGINE=BLACKHOLE;
 
